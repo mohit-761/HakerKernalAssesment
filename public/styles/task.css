@@ -1,0 +1,25 @@
+
+form{
+    width: 600px;
+    height: auto;
+    padding: 16px 0;
+}
+
+.all-users, table{
+    width: 100%;
+}
+
+.all-users input{
+    height: 24px;
+    width: auto;
+}
+
+table{
+    text-align: center;
+    border-bottom:2px solid gray ;
+    margin-bottom: 5px;
+}
+
+th,td{
+    padding: 5px;
+}

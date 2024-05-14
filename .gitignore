@@ -1,0 +1,22 @@
+
+node_modules/
+
+.env
+.mysql_credentials.json  # Adjust filename if different
+
+public/templates_compiled/  # Adjust path if different
+
+coverage/
+
+test_data/
+
+logs/
+
+.idea/
+.vscode/
+
+*.tmp
+*.swp
+
+Thumbs.db
+DS_Store

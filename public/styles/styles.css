@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: sans-serif;
+}
+
+.nav {
+  font-family: sans-serif;
+  width: 100%;
+  height: 80px; 
+  display: flex;
+  justify-content: center;
+}
+.nav ul{
+ width: 50%;
+ display: flex; 
+ align-items: center;
+ justify-content: space-around;
+}
+
+li,li a{
+  list-style: none;
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: blue;
+}
+
+.active, .nav a:hover{
+  color: brown;
+  text-decoration: underline;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  height: 100vh;
+  width: 100%;
+}
+
+form {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 3px, 1px 1px 3px, 1px 1px 3px, 1px 1px 3px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+form input{
+  border: 1px solid gray;
+  width: 350px;
+  height: 40px;
+  outline: none;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+input[type="submit"] {
+  width: max-content;
+  padding: 5px;
+  font-size: 17px;
+}
+
+
+input[type="submit"]:hover{
+  cursor: pointer;
+}
+
+.button-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button-section a {
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  background-color: rgb(231, 228, 228);
+  width: max-content;
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 8px;
+}
+
+.options{
+  width: 350px;
+  height: 35px;
+  outline: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.success-message,
+.error-message {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.success-message {
+  color: green;
+}
+.error-message {
+  color: red;
+}

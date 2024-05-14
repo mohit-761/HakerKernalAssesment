@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add user</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/task.css" />
+</head>
+<body>
+ <div class="form-container">  
+    <form action="/showTask" method="post">
+                 <section class="all-users">
+          <table cellspacing="10px" >
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+           {{#each tasks}}   
+          <tbody>
+            <tr>
+              <td>{{this.user_id}}</td>
+              <td>{{this.task_name}}</td>
+              <td>{{this.task_status}}</td>
+            </tr>
+          </tbody>
+         {{/each}}
+         </table>
+       </section>
+        <label for="userId">Enter User Id: </label>
+        <input type="text" name="userId" />
+      <sction class="button-section">
+        <input type="submit" value="show task" />
+        <a href="/">go back</a>
+      </sction>
+    </form>
+</div>
+</body>
+</html>

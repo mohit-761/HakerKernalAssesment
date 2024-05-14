@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add user</title>
+    <link rel="stylesheet" href="./styles/styles.css"/>
+    <link rel="stylesheet" href="./styles/task.css" />
+</head>
+<body>
+  <div  class="form-container">
+     <form method="post" action="/assignTask"> 
+        <section class="all-users">
+          <table cellspacing="10px" >
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Mobile Number</th>
+              <th>Email</th>
+              <th>Select</th>
+            </tr>
+          </thead>
+           {{#each users}}   
+          <tbody>
+            <tr>
+              <td>{{this.id}}</td>
+              <td>{{this.name}}</td>
+              <td>{{this.mobile_number}}</td>
+              <td>{{this.email}}</td>
+              <td><input type="checkbox" name="user" value={{this.id}}></td>
+            </tr>
+          </tbody>
+         {{/each}}
+         </table>
+       </section>    
+        <label for="tname">Enter Task Name: </label>
+        <input type="text" name="tname" >           
+          <select class="options" name="type">
+            <option>select status</option>
+            <option value="pending">Pending</option>
+            <option value="done">Done</option>
+          </select> 
+      <section class="button-section">      
+        <input type="submit" value="asign task">
+        <a href="/gettingData">view on excel </a>
+        <a href="/">add users</a>
+      </section>
+    </form>
+    {{#if successMessage}}
+           <p class="success-message">{{ successMessage }}</p>
+    {{/if}}
+    {{#if errorMessage}}
+           <p class="error-message">{{ errorMessage }}</p>
+    {{/if}}
+  </div>
+</body>
+</html>
