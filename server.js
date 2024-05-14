@@ -88,14 +88,12 @@ app.post("/assignTask", async (req,res)=>{
 
 
 // code for step 3 and 4
-
  app.get("/gettingData",async(req,res)=>{
 try{
     const [user_data] = await connection.execute(`select * from user`);
     const [task_data] = await connection.execute(`select * from task`);
 
     const workbook = new excelJs.Workbook();
-    // Create a worksheet for users
     const usersSheet = workbook.addWorksheet('Users');
 
     usersSheet.columns = [
@@ -104,11 +102,11 @@ try{
       { header: 'Email', key: 'email', width: 25 },
       { header: 'Mobile', key: 'mobile', width: 20 },
     ];
-      // Populate users sheet data
+
       user_data.forEach((user) => {
         usersSheet.addRow(user);
       });
-      // Create a worksheet for tasks
+     
     const tasksSheet = workbook.addWorksheet('Tasks');
     tasksSheet.columns = [
       { header: 'User ID', key: 'user_id', width: 10 }, // Use user_id here
@@ -116,19 +114,18 @@ try{
       { header: 'Task Status', key: 'task_status', width: 15 },
     ];
     
-    // Populate tasks sheet data
+    
     task_data.forEach((task) => {
       tasksSheet.addRow(task);
     });
 
-    // Write the Excel file to a buffer
+  
     const buffer = await workbook.xlsx.writeBuffer();
 
-    // Set the response headers
     res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     res.setHeader('Content-Disposition', 'attachment; filename=users_and_tasks.xlsx');
 
-    // Send the Excel file as a response
+
     res.send(buffer);
 }catch(error){
 console.log(error);
